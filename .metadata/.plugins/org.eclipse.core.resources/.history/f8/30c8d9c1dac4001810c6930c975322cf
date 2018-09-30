@@ -1,0 +1,15 @@
+@RunWith(SpringJUnit4ClassRunner.class)
+	@ContextConfiguration(locations = "classpath:appctx.xml")
+public class TestStatement {
+	
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Test
+	public void testHibernate() {
+		Product p = new Product();
+		p.setName("Acer");
+		p.setPrice(28000.0);
+		productRepository.add(p);
+	}
+}

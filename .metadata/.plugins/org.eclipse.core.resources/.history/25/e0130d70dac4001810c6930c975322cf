@@ -1,0 +1,25 @@
+package com.bank.repo;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bank.entity.Transactions;
+
+@Repository
+public class TransactionRepoImpl implements TransactionRepo {
+	@Autowired
+	private SessionFactory factory;
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	@Override
+	public List<Transactions> loadStatement() {
+		Session session = factory.getCurrentSession();
+		List<Quiz> quizes = session.createQuery("from Quiz order by id").list();// in create Query, we write Entity
+																				// names
+		return quizes;
+	}
+
+}

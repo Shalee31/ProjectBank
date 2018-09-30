@@ -1,0 +1,6 @@
+package com.bank.repo;
+
+public interface TransactionRepo {
+
+	
+}

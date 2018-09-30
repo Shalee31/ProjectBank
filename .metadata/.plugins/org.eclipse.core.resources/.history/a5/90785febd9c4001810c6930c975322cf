@@ -1,0 +1,5 @@
+package com.bank.repo;
+
+public class TransactionRepoImpl implements TransactionRepo {
+
+}
