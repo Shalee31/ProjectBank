@@ -2,7 +2,6 @@ package com.bank.entity;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,19 +10,18 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "account")
 public class Accounts {
 	@Id
-	@Column(name="account_no")
+	@Column(name = "account_no")
 	private String accountNo;
-	/* private int aadhaarNo; */
 	private String email;
 	private double balance;
 	private String password;
-	@Column(name="opening_date")
+	@Column(name = "opening_date")
 	private Date openingDate;
 	private String upi;
-	@Column(name="acholder_name")
+	@Column(name = "acholder_name")
 	private String accountHolderName;
 	@OneToOne
 	@JoinColumn(name = "aadhaar_no")

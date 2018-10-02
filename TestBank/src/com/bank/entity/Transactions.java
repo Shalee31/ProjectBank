@@ -3,22 +3,26 @@ package com.bank.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToOne;
 
 @Entity
 public class Transactions {
 	@Id
-	@Column(name="transaction_id")
+	@Column(name = "transaction_id")
 	private int transactionId;
-	@Column(name="transaction_type")
+	@Column(name = "transaction_type")
 	private String transactionType;
 	private double balance;
 	private double amount;
 	private String timestamp;
-	@OneToOne
-	@JoinColumn(name = "account_no")
-	private Accounts accounts;
+	/*
+	 * @OneToOne
+	 * @JoinColumn(name = "account_no") 
+	 * private Accounts accounts;
+	 */
+	@Column(name = "account_no")
+	private String accountNo;
 
 	public int getTransactionId() {
 		return transactionId;
@@ -60,20 +64,20 @@ public class Transactions {
 		this.timestamp = timestamp;
 	}
 
-	/*public String getAccountNo() {
+	public String getAccountNo() {
 		return accountNo;
 	}
 
 	public void setAccountNo(String accountNo) {
 		this.accountNo = accountNo;
-	}*/
+	}
 
-	public Accounts getAccounts() {
+	/*public Accounts getAccounts() {
 		return accounts;
 	}
 
 	public void setAccounts(Accounts accounts) {
 		this.accounts = accounts;
-	}
+	}*/
 
 }

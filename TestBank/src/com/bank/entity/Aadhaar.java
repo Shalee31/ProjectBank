@@ -1,27 +1,25 @@
 package com.bank.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "aadhaars")
 public class Aadhaar {
-	// display the data of user after verifying the otp 
+	// display the data of user after verifying the otp
 	private String name;
 	private String address;
 	@Id
-	@Column(name="aadhaar_no")
+	@Column(name = "aadhaar_no")
 	private int aadhaarNo;
-	@Column(name="phone_no")
+	@Column(name = "phone_no")
 	private int phoneNo;
 	private String city;
 	private int pincode;
 	private String gender;
-	@Column(name="pan_no")
+	@Column(name = "pan_no")
 	private String panNo;
 
 	public String getName() {

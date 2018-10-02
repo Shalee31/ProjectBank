@@ -7,20 +7,20 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bank.entity.Transactions;
-import com.bank.repo.TransactionRepo;
+import com.bank.service.StatementService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:appctx.xml")
 public class TestStatement {
 
 	@Autowired
-	private TransactionRepo stmtRepo;
+	private StatementService service;
 
 	@Test
 	public void testHibernate() {
-		List<Transactions> stmt = stmtRepo.loadStatement();
+		List<Transactions> stmt = service.loadStatement();
 		for (Transactions t : stmt) {
-			System.out.println(t.getBalance());
+			System.out.println(t.getTransactionType() + " : " + t.getBalance() + " : " + t.getTransactionId());
 		}
 	}
 }
