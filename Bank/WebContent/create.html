@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+    <link href="search-filter.css" rel="stylesheet">
+    <link rel ="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $( "#start_date" ).datepicker(
+	
+    { 
+        maxDate: '0', 
+        beforeShow : function()
+        {
+            jQuery( this ).datepicker({  maxDate: 0 });
+        },
+        altFormat: "dd/mm/yy", 
+        dateFormat: 'dd/mm/yy'
+        
+    }
+    
+);
+
+$( "#end_date" ).datepicker( 
+
+    {
+        maxDate: '0', 
+        beforeShow : function()
+        {
+            jQuery( this ).datepicker('option','minDate', jQuery('#start_date').val() );
+        } , 
+        altFormat: "dd/mm/yy", 
+        dateFormat: 'dd/mm/yy'
+        
+    }
+    
+);
+    </script>
+</head>
+<body>
+    <table width="68%" border="0" align="center" cellpadding="0" cellspacing="6">
+        <tr>
+          <td align="left" valign="middle" class="search-filter-headings">Start Date:</td>
+          <td align="left" valign="middle">
+          <input type="text" name="start_date" id="start_date" class="filter-textfields" placeholder="Start Date"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="middle" class="search-filter-headings">End Date:</td>
+          <td align="left" valign="middle">
+          <input type="text" name="end_date" id="end_date" class="filter-textfields" placeholder="End Date"/>
+          </td>
+        </tr>
+     
+      </table>
+</body>
+</html>
