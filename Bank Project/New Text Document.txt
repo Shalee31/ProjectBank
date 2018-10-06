@@ -1,0 +1,7 @@
+double balance = scope.getAttribute("balance");
+					long bal = Double.valueOf(balance).longValue();
+					 request.setAttribute("bal", bal);
+
+<td>${bal}</td>
+
+double balance = Double.parseDouble(bal1);
